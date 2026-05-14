@@ -1,10 +1,10 @@
-# 🏠 House Price Prediction System
+#  House Price Prediction System
 
 > An end-to-end Machine Learning project — from model research and training to a fully deployed production-style web application — built to intelligently predict residential property prices based on key housing features.
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 
 1. [Project Overview](#-project-overview)
 2. [Part I — Machine Learning Model](#-part-i--machine-learning-model)
@@ -29,7 +29,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 The real estate market generates enormous volumes of housing data, yet accurate price estimation remains a challenge due to the number of influencing variables. This project addresses that challenge by building a supervised Machine Learning pipeline that trains regression models on a structured housing dataset and deploys the best-performing model as an interactive web application.
 
@@ -40,7 +40,7 @@ The project is divided into two distinct parts:
 
 ---
 
-# 🤖 Part I — Machine Learning Model
+#  Part I — Machine Learning Model
 
 ## Problem Statement
 
@@ -397,7 +397,7 @@ The trained Gradient Boosting model was serialized using `joblib` and saved as `
 
 ---
 
-# 🌐 Part II — Web Application
+#  Part II — Web Application
 
 ## Technology Stack
 
@@ -584,7 +584,7 @@ http://127.0.0.1:5000
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
 > *(Add screenshots here after running the application)*
 
@@ -595,7 +595,7 @@ http://127.0.0.1:5000
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - [ ] Add model performance metrics dashboard (R², MAE, RMSE) visible in the UI
 - [ ] Integrate multiple ML models with a side-by-side comparison view
@@ -608,7 +608,7 @@ http://127.0.0.1:5000
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Haris Hussain**
 Built as an internship-level, production-ready end-to-end Machine Learning web application project.
