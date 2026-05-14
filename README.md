@@ -1,10 +1,10 @@
-# 🏠 House Price Prediction System
+#  House Price Prediction System
 
-> An end-to-end Machine Learning project — from model research and training to a fully deployed production-style web application — built to intelligently predict residential property prices based on key housing features.
+> An Machine Learning project, from model research and training to a fully deployed production style web application and built to intelligently predict residential property prices based on key housing features.
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 
 1. [Project Overview](#-project-overview)
 2. [Part I — Machine Learning Model](#-part-i--machine-learning-model)
@@ -23,13 +23,12 @@
    - [Application Features](#application-features)
    - [Installation & Setup](#installation--setup)
    - [Running the Application](#running-the-application)
-4. [Screenshots](#-screenshots)
-5. [Future Improvements](#-future-improvements)
-6. [Author](#-author)
+4. [Future Improvements](#-future-improvements)
+5. [Author](#-author)
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 The real estate market generates enormous volumes of housing data, yet accurate price estimation remains a challenge due to the number of influencing variables. This project addresses that challenge by building a supervised Machine Learning pipeline that trains regression models on a structured housing dataset and deploys the best-performing model as an interactive web application.
 
@@ -40,7 +39,7 @@ The project is divided into two distinct parts:
 
 ---
 
-# 🤖 Part I — Machine Learning Model
+#  Part I — Machine Learning Model
 
 ## Problem Statement
 
@@ -397,7 +396,7 @@ The trained Gradient Boosting model was serialized using `joblib` and saved as `
 
 ---
 
-# 🌐 Part II — Web Application
+#  Part II — Web Application
 
 ## Technology Stack
 
@@ -488,6 +487,7 @@ The encoded values are assembled into a **Pandas DataFrame** with columns in the
 
 The raw numeric prediction from the model is formatted into a human-readable PKR currency string:
 
+example:
 ```
 PKR 7,250,000
 ```
@@ -584,18 +584,7 @@ http://127.0.0.1:5000
 
 ---
 
-## 🖼️ Screenshots
-
-> *(Add screenshots here after running the application)*
-
-| Page        | Description                                        |
-|-------------|----------------------------------------------------|
-| Home Page   | Hero section, info badges, and prediction form     |
-| Result Page | Estimated price card, success alert, summary table |
-
----
-
-## 🔮 Future Improvements
+##  Future Improvements
 
 - [ ] Add model performance metrics dashboard (R², MAE, RMSE) visible in the UI
 - [ ] Integrate multiple ML models with a side-by-side comparison view
@@ -608,13 +597,10 @@ http://127.0.0.1:5000
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Haris Hussain**
-Built as an internship-level, production-ready end-to-end Machine Learning web application project.
+Built as an internship level, production ready Machine Learning web application project.
 
 ---
 
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
