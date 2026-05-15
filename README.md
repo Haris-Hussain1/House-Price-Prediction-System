@@ -35,11 +35,11 @@ The real estate market generates enormous volumes of housing data, yet accurate 
 The project is divided into two distinct parts:
 
 - **Part I** covers the complete ML workflow — data exploration, preprocessing, model training, evaluation, and selection.
-- **Part II** covers the full-stack web application that integrates the trained model and exposes it through a clean, responsive user interface.
+- **Part II** covers the full stack web application that integrates the trained model and exposes it through a clean, responsive user interface.
 
 ---
 
-#  Part I — Machine Learning Model
+#  Part I : Machine Learning Model
 
 ## Problem Statement
 
@@ -105,15 +105,15 @@ A **supervised Machine Learning** approach using regression models was implement
 
 ---
 
-## Step-by-Step Training Pipeline
+## Step by Step Training Pipeline
 
-### Chapter 1 — Linear Regression
+### Chapter 1 : Linear Regression
 
 ---
 
-#### Step 1 — Importing Libraries
+#### Step 1 : Importing Libraries
 
-All necessary Python libraries were imported at the start of the notebook. `Pandas` and `NumPy` handle data manipulation and numerical operations. `Matplotlib` and `Seaborn` provide data visualization capabilities. `Scikit-learn` supplies the preprocessing tools, model classes, and evaluation metrics required throughout the pipeline.
+All necessary Python libraries were imported at the start of the notebook. `Pandas` and `NumPy` handle data manipulation and numerical operations. `Matplotlib` and `Seaborn` provide data visualization capabilities. `Scikit learn` supplies the preprocessing tools, model classes, and evaluation metrics required throughout the pipeline.
 
 ```python
 import pandas as pd
@@ -132,9 +132,9 @@ warnings.filterwarnings('ignore')
 
 ---
 
-#### Step 2 — Loading & Exploring the Dataset
+#### Step 2 : Loading & Exploring the Dataset
 
-The housing dataset was loaded into a Pandas DataFrame. An initial exploratory analysis was then performed to understand the structure of the data — including the number of rows and columns, data types, missing value counts, and descriptive statistics. This step is critical before applying any preprocessing, as it reveals the nature and quality of the data.
+The housing dataset was loaded into a Pandas DataFrame. An initial exploratory analysis was then performed to understand the structure of the data, including the number of rows and columns, data types, missing value counts, and descriptive statistics. This step is critical before applying any preprocessing, as it reveals the nature and quality of the data.
 
 ```python
 df = pd.read_csv('/content/drive/MyDrive/Housing.csv')
@@ -161,7 +161,7 @@ df.describe()
 
 ---
 
-#### Step 3 — Categorical Feature Encoding
+#### Step 3 : Categorical Feature Encoding
 
 Machine learning algorithms cannot process raw textual data. All categorical columns were identified and encoded into numerical values using `LabelEncoder`. This transformation converts string labels into integer representations, enabling the regression models to learn from these features effectively.
 
@@ -187,9 +187,9 @@ df.head()
 
 ---
 
-#### Step 4 — Feature Selection
+#### Step 4 : Feature Selection
 
-The dataset was split into input features (`X`) and the target variable (`y`). All 12 property-related features were selected as inputs, and `price` was designated as the prediction target. This separation is a fundamental requirement for supervised learning — the model learns the mapping from input features to the output price.
+The dataset was split into input features (`X`) and the target variable (`y`). All 12 property related features were selected as inputs, and `price` was designated as the prediction target. This separation is a fundamental requirement for supervised learning, the model learns the mapping from input features to the output price.
 
 ```python
 X = df.drop('price', axis=1)
@@ -208,9 +208,9 @@ Index(['area', 'bedrooms', 'bathrooms', 'stories', 'mainroad', 'guestroom',
 
 ---
 
-#### Step 5 — Feature Scaling
+#### Step 5 : Feature Scaling
 
-`StandardScaler` was applied to normalize the range of all input features. Since different features operate on different scales (e.g., `area` in thousands vs. `bedrooms` in single digits), scaling ensures that no single feature dominates the learning process due to its magnitude. This is particularly important for distance-sensitive and gradient-based algorithms.
+`StandardScaler` was applied to normalize the range of all input features. Since different features operate on different scales (in assence,: `area` in thousands vs. `bedrooms` in single digits), scaling ensures that no single feature dominates the learning process due to its magnitude. This is particularly important for distance sensitive and gradient based algorithms.
 
 ```python
 scaler = StandardScaler()
@@ -221,7 +221,7 @@ X_scaled.head()
 
 ---
 
-#### Step 6 — Train / Test Split
+#### Step 6 : Train / Test Split
 
 The scaled dataset was divided into training and testing subsets using an **80/20 split ratio**. The training set (436 samples) was used to fit the model, while the testing set (109 samples) was held out to evaluate performance on unseen data. A fixed `random_state=42` was used to ensure reproducibility.
 
@@ -241,7 +241,7 @@ Testing Features Shape:  (109, 12)
 
 ---
 
-#### Step 7 — Training the Linear Regression Model
+#### Step 7 : Training the Linear Regression Model
 
 A `LinearRegression` model was instantiated and trained on the training dataset. Linear Regression is a foundational supervised learning algorithm that models the relationship between input features and the target variable by fitting the best-fit linear equation to the data. It serves as the baseline model in this comparison.
 
@@ -254,7 +254,7 @@ print("Linear Regression Model Trained Successfully!")
 
 ---
 
-#### Step 8 — Generating Predictions
+#### Step 8 : Generating Predictions
 
 After training, the model was used to generate price predictions on the test set. The predicted values were compared against the actual prices to assess how well the model generalizes to unseen data.
 
@@ -271,7 +271,7 @@ predictions_df.head(10)
 
 ---
 
-#### Step 9 — Visualizing Actual vs. Predicted Prices
+#### Step 9 : Visualizing Actual vs. Predicted Prices
 
 A line graph was plotted to visually compare the actual house prices against the Linear Regression predictions across the first 50 test samples. The blue line represents actual values and the orange line represents predicted values.
 
@@ -290,7 +290,7 @@ plt.show()
 
 ---
 
-#### Step 10 — Model Evaluation (Linear Regression)
+#### Step 10 : Model Evaluation (Linear Regression)
 
 The Linear Regression model was evaluated using **Mean Absolute Error (MAE)** and **Root Mean Square Error (RMSE)**. MAE measures the average magnitude of prediction errors, while RMSE penalizes larger errors more heavily due to the squaring operation. Lower values of both metrics indicate better model performance.
 
@@ -311,11 +311,11 @@ Linear Regression RMSE: 1,331,071.42
 
 ---
 
-### Chapter 2 — Gradient Boosting Regressor
+### Chapter 2 : Gradient Boosting Regressor
 
 ---
 
-#### Step 11 — Training the Gradient Boosting Model
+#### Step 11 : Training the Gradient Boosting Model
 
 A `GradientBoostingRegressor` was trained as an advanced ensemble model for performance comparison against Linear Regression. Gradient Boosting is an iterative ensemble technique that builds multiple weak decision trees sequentially, where each tree corrects the errors of the previous one. This approach allows the model to capture complex, non-linear relationships in the data that a simple linear model cannot.
 
@@ -328,7 +328,7 @@ print("Gradient Boosting Model Trained Successfully!")
 
 ---
 
-#### Step 12 — Predictions & Evaluation (Gradient Boosting)
+#### Step 12 : Predictions & Evaluation (Gradient Boosting)
 
 Predictions were generated using the trained Gradient Boosting model and evaluated using the same MAE and RMSE metrics for a fair comparison.
 
@@ -357,11 +357,11 @@ Gradient Boosting RMSE: 1,301,871.87
 
 ---
 
-### Chapter 3 — Model Comparison & Selection
+### Chapter 3 : Model Comparison & Selection
 
 ---
 
-#### Step 13 — Comparative Evaluation
+#### Step 13 : Comparative Evaluation
 
 After training both models, their performances were compared side-by-side using MAE and RMSE. A bar chart was plotted to visualize the RMSE difference between the two models.
 
@@ -396,7 +396,7 @@ The trained Gradient Boosting model was serialized using `joblib` and saved as `
 
 ---
 
-#  Part II — Web Application
+#  Part II : Web Application
 
 ## Technology Stack
 
@@ -515,9 +515,9 @@ PKR 7,250,000
 - Print-optimized CSS (`@media print`) that hides navigation and buttons
 
 ### Error Handling
-- `KeyError` — caught when a required form field is missing
-- `ValueError` — caught when a numeric field contains invalid input
-- General `Exception` — catches any unexpected model or runtime errors
+- `KeyError` : caught when a required form field is missing
+- `ValueError` : caught when a numeric field contains invalid input
+- General `Exception` : catches any unexpected model or runtime errors
 - All errors are rendered back on the home page as a dismissible Bootstrap danger alert
 
 ---
